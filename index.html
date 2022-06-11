@@ -1,34 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/styles.css" />
-        <link rel="stylesheet" href="assets/css/reset.css" />
-        <script src="main.js"></script>
-    </head>
-    <body>
-        <div class="container">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script type="module" src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="rules-container rules-disp-none" id="disp-rules">
+
+            <div class="rule-title">
+                <h1 class="title">javascript quiz</h1>
+            </div>
+
+            <div class="countdown-container">
+                <div class="countdownBar"></div>
+            </div>
+
+            <div class="rules">
+                <ul>
+                    <li>you will only have 100 seconds to answer 10 questions</li>
+                    <li>for each question you answer incorrectly the timer will drop 10 seconds</li>
+                    <li>at the end of the quiz you will see your score and you are going to be able to save it</li>
+                    <li>the highest score will appear at the top</li>
+                </ul>
+            </div>
+
+            <div class="start-btn-container">
+                <button class="start-btn" id="start-quiz">start quiz</button>
+            </div>
+
+        </div>
+
+        <div class="quiz-disp-none" id="disp-quiz">
 
             <div class="title-container">
-                <h1 class="quiz-name">front end quiz</h1>
+                <h1 class="quiz-name">javascript quiz</h1>
                 <div class="timer-container">
-                    <p>time left <span class="timer-style">0:00</span></p>
+                    <p class="timer">time left <span class="timer-style" id="countdown">100</span></p>
                 </div>
             </div>
 
-            <div class="question-container"><span>1</span>.  question</div>
+            <div class="countdown-container">
+                <div class="countdownBar" id="timeBar"></div>
+            </div>
 
-            <div class="answer-container">
-                <button>answer 1</button>
-                <button>answer 2</button>
-                <button>answer 3</button>
-                <button>answer 4</button>
+            <div>
+                <h2 id="question"></h2>
+            </div>
+
+            <div class="answer-container" id="btnchoices"></div>
+
+            <footer>
+                <p id="nQuestion"></p>
+            </footer>
+        </div>
+
+        <div class="scores-disp-none" id="disp-scores">
+            <div class="rule-title">
+                <h2 class="title">highest scores</h2>
+            </div>
+
+            <div class="countdown-container">
+                <div class="countdownBar"></div>
+            </div>
+
+            <div class="high-scores-container">
+                <form>
+                    <label for="initials">enter a username:</label>
+                    <input type="text" id="initials" name="initials">
+                    <input type="submit" value="Submit" id="submit-score">
+                </form>
+                <table>
+                    <tr>
+                        <th>initial</th>
+                        <th>time left</th>
+                        <th>answers</th>
+                    </tr>
+                    <tr>
+                        <td>joaco</td>
+                        <td>57s</td>
+                        <td>10/10</td>
+                    </tr>
+                    <tr>
+                        <td>joaco</td>
+                        <td>50s</td>
+                        <td>10/10</td>
+                    </tr>
+                    <tr>
+                        <td>joaco</td>
+                        <td>45s</td>
+                        <td>9/10</td>
+                    </tr>
+                    <tr>
+                        <td>joaco</td>
+                        <td>50s</td>
+                        <td>10/10</td>
+                    </tr>
+                    <tr>
+                        <td>joaco</td>
+                        <td>45s</td>
+                        <td>9/10</td>
+                    </tr>
+                </table>
             </div>
         </div>
-    </body>
-  <style>
-  </style>
+    </div>
+</body>
+<style>
+</style>
+
 </html>
