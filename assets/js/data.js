@@ -1,5 +1,5 @@
 
-
+//contains the data for all the questions
 export const data = [
     {
         question: "A string;",
@@ -24,7 +24,7 @@ export const data = [
         choices: ["A. Add 1 to the previous value of x", "B. Add 1 to the previous value of y", "C. Subtract 1 from the previous value of x", "D. Give an error message"],
         answer: "A. Add 1 to the previous value of x"
     },
-    
+
     {
         question: "It cannot be updated or re-declared into the scope",
         choices: ["A. function", "B. var", "C. let", "D. const"],

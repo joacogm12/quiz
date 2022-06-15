@@ -67,49 +67,37 @@
 
         <div class="scores-disp-none" id="disp-scores">
             <div class="rule-title">
-                <h2 class="title">highest scores</h2>
+                <h2 class="title">your scores</h2>
             </div>
 
             <div class="countdown-container">
                 <div class="countdownBar"></div>
             </div>
 
+            <div></div>
             <div class="high-scores-container">
-                <form>
+                <form id="hide-form">
                     <label for="initials">enter a username:</label>
                     <input type="text" id="initials" name="initials">
                     <input type="submit" value="Submit" id="submit-score">
                 </form>
-                <table>
+
+                <table id="mostRecentScore">
+                    <tr>
+                        <th>time left</th>
+                        <th>answers</th>
+                    </tr>
+                </table>
+
+                <div class="high-scores-title">
+                    <h3 class="title">high scores</h3>
+                </div>
+
+                <table id="highScores">
                     <tr>
                         <th>initial</th>
                         <th>time left</th>
                         <th>answers</th>
-                    </tr>
-                    <tr>
-                        <td>joaco</td>
-                        <td>57s</td>
-                        <td>10/10</td>
-                    </tr>
-                    <tr>
-                        <td>joaco</td>
-                        <td>50s</td>
-                        <td>10/10</td>
-                    </tr>
-                    <tr>
-                        <td>joaco</td>
-                        <td>45s</td>
-                        <td>9/10</td>
-                    </tr>
-                    <tr>
-                        <td>joaco</td>
-                        <td>50s</td>
-                        <td>10/10</td>
-                    </tr>
-                    <tr>
-                        <td>joaco</td>
-                        <td>45s</td>
-                        <td>9/10</td>
                     </tr>
                 </table>
             </div>
