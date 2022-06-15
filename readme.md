@@ -19,8 +19,13 @@ when the quiz is finished this will appear
 
 ![image1](assets/images/scores.png)
 
+your highest scores will appear at the bottom. if your recent score is not high enough a message will appear 
+
+telling you that the score is not high enough and to try again 
+
+![image1](assets/images/mensaje.png)
 
 
 # Deployed Application
 
-Link to the deployed project: https://joacogm12.github.io/password-generator/
+Link to the deployed project: https://joacogm12.github.io/quiz/
