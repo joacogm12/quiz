@@ -2,11 +2,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 97vh;
-    width: 98vw;
+    height: 100vh;
+    width: 100vw;
     background-image: linear-gradient(rgba(81, 6, 167, 0.788), rgb(92, 14, 92));
     color: rgb(92, 14, 92);
     font-family: 'Patrick Hand', cursive;
+    margin: 0;
 }
 
 .container {
@@ -162,7 +163,6 @@ p {
 }
 
 form {
-    display: flex;
     margin: 10px 0;
     text-align: center;
     align-items: center;
@@ -177,14 +177,34 @@ form {
     text-align: center;
     padding: 10px 7px;
     font-size: 125%;
-    border-bottom-style: solid;
-    border-width: 1px;
+}
+
+#notEnough {
+    text-align: center;
+}
+
+#mostRecentScore {
+    margin: 0 auto;
+}
+
+.gridTable {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    margin: 0 15%;
+    text-align: center;
+}
+
+.gridTable h2,
+p {
+    margin: 5px 0;
 }
 
 table {
     width: 80%;
     text-align: center;
     margin: auto;
+    margin: 0 30px;
 }
 
 th {
@@ -192,7 +212,7 @@ th {
 }
 
 .rules-disp-none {
-    display: normal;
+    display: block;
 }
 
 .quiz-disp-none {
@@ -203,4 +223,14 @@ th {
     display: none;
 }
 
-@media screen and (max-width) {}
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .container {
+        width: 80%;
+    }
+}

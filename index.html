@@ -16,6 +16,7 @@
 <body>
     <div class="container">
 
+        <!--container to display the rules of the quiz-->
         <div class="rules-container rules-disp-none" id="disp-rules">
 
             <div class="rule-title">
@@ -41,6 +42,8 @@
 
         </div>
 
+
+        <!--container to display the quiz-->
         <div class="quiz-disp-none" id="disp-quiz">
 
             <div class="title-container">
@@ -65,41 +68,81 @@
             </footer>
         </div>
 
-        <div class="scores-disp-none" id="disp-scores">
-            <div class="rule-title">
-                <h2 class="title">your scores</h2>
-            </div>
 
-            <div class="countdown-container">
-                <div class="countdownBar"></div>
-            </div>
 
-            <div></div>
-            <div class="high-scores-container">
-                <form id="hide-form">
-                    <label for="initials">enter a username:</label>
-                    <input type="text" id="initials" name="initials">
-                    <input type="submit" value="Submit" id="submit-score">
-                </form>
 
-                <table id="mostRecentScore">
-                    <tr>
-                        <th>time left</th>
-                        <th>answers</th>
-                    </tr>
-                </table>
+        <!--container to display the scores of the quiz-->
+        <div class="scores-disp-none scoreContainer" id="disp-scores">
 
-                <div class="high-scores-title">
-                    <h3 class="title">high scores</h3>
+            <div>
+                <div class="rule-title">
+                    <h2 class="title">your score</h2>
                 </div>
 
-                <table id="highScores">
-                    <tr>
-                        <th>initial</th>
-                        <th>time left</th>
-                        <th>answers</th>
-                    </tr>
-                </table>
+                <div class="countdown-container">
+                    <div class="countdownBar"></div>
+                </div>
+
+                <div class="high-scores-container">
+                    <form id="hide-form">
+                        <label for="initials">enter a username:</label>
+                        <input type="text" id="initials" name="initials">
+                        <input type="submit" value="Submit" id="submit-score">
+                    </form>
+
+
+                    <table id="mostRecentScore">
+                        <tr>
+                            <th>time left</th>
+                            <th>answers</th>
+                        </tr>
+                    </table>
+
+                    <div id="notEnough">
+                        <h3>score not high enough to appear in the list please try again <br> i know you can do it
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <div class="high-scores-title">
+                    <h2 class="title">high scores</h2>
+                </div>
+
+                <div class="countdown-container">
+                    <div class="countdownBar"></div>
+                </div>
+
+
+                <div class="gridTable">
+                    <div>
+                        <h2>name</h2>
+                        <div id="highScoresNames">
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>answers</h2>
+                        <div id="highScoresScores">
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>time left</h2>
+                        <div id="highScoresTime">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="start-btn-container">
+                <button onClick="window.location.reload();" class="start-btn" id="reload">restart quiz</button>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ export class Quiz {
         this.questions = questions
     }
 
-    //
+    //returns the object from the array with the index number
     getQuestionIndex() {
         return this.questions[this.questionIndex]
     }

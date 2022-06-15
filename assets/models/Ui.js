@@ -1,4 +1,5 @@
 
+import { questions } from "../js/questions.js";
 import { Quiz } from "./Quiz.js";
 
 export class Ui {
@@ -23,12 +24,12 @@ export class Ui {
      * @param {string[]} options 
      */
 
-    //creates the bottons for each question
+    //creates the buttons for each question
     showOptions(options, nextQuestion) {
         const qOption = document.getElementById("btnchoices");
         qOption.innerHTML = "";
 
-
+        //creates the the buttons for the the questions
         for (let index = 0; index < options.length; index++) {
             const qButtons = document.createElement("button");
             qButtons.innerText = options[index];

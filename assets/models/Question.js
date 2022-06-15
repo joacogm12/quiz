@@ -1,3 +1,4 @@
+// this class creates the object that is going into the array
 export class Question {
     /**
      * 
