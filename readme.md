@@ -1,7 +1,12 @@
-# Password-Generator
+# Java Script Quiz
 
 this application was made with html, css, and js. it generates a javascript quiz, that saves the highest scores 
-![image1](assets/images/foto%20principal.png)
+
+# About the quiz
+the quiz will start when the user clicks the start button, the first question will be diplayed and a timer
+
+will start and you will have to answer 10 questions
+
 
 # How to use it
 

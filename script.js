@@ -21,7 +21,7 @@ const nQuestionEl = document.getElementById("nQuestion");
 const mostRecentScoreEl = document.getElementById("mostRecentScore");
 
 //stores the highest scores from the localstorage
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 //input button to enter your recent score 
 const submitScore = document.getElementById("submit-score");
@@ -128,9 +128,23 @@ function showScores() {
 
     //check if the value of the last score in the list is higher than the score the user just got 
     //if it is higher the form to submit your score will not show and text will appear 
-    if ((highScores[4].score > tableScore)) {
-        hideForm.style.display = "none";
-        notEnough.style.display = "block";
+    if (highScores.length > 4) {
+
+        if ((highScores[4].score >= tableScore)) {
+
+            if (highScores[4].time < seconds) {
+
+                hideForm.style.display = "block";
+                notEnough.style.display = "none";
+
+            } else {
+                hideForm.style.display = "none";
+                notEnough.style.display = "block";
+            }
+        } else {
+            hideForm.style.display = "block";
+            notEnough.style.display = "none";
+        }
     } else {
         hideForm.style.display = "block";
         notEnough.style.display = "none";
@@ -143,7 +157,6 @@ function showScores() {
 //y esconde la intput form para que no puedas guardar el mismo score muchas veces
 function saveScores(ev) {
     ev.preventDefault();
-
 
     //saves the most recent value
     newScores = {
@@ -165,12 +178,21 @@ function saveScores(ev) {
     localStorage.setItem("highScores", JSON.stringify(highScores));
 
     //updates the table of high scores
+    console.log(highScores)
+    console.log(highScores.length);
+
+    const x = null;
+    console.log(highScores)
+
+
     for (let i = 0; i < highScores.length; i++) {
-        document.getElementById("name" + i).innerHTML = highScores[i].name;
+        console.log(i, highScores[i].name, highScores[i].score);
+        //x = document.getElementById("name" + i);
+        document.getElementById("name" + i).innerHTML = highScores[i].name || "no username";
 
         document.getElementById("time" + i).innerHTML = highScores[i].time + "s";
 
-        document.getElementById("scores" + i).innerHTML = highScores[i].score + "/10";
+        document.getElementById("score" + i).innerHTML = highScores[i].score + "/10";
     }
 
     //hides the form so that one score can be inputed many times
@@ -187,15 +209,16 @@ function showTableScores() {
     const highScoresTime = document.getElementById("highScoresTime");
     const highScoresScores = document.getElementById("highScoresScores");
 
+    var i = 0;
     //cicle that creates the elements for a grid table
     //it repeats it self as many times as there are saved scores
-    for (let i = 0; i < highScores.length; i++) {
+    for (i = 0; i < highScores.length; i++) {
         const pTagNames = document.createElement("p");
         const pTagTime = document.createElement("p");
         const pTagScores = document.createElement("p");
 
         //creates p element for the username
-        pTagNames.innerHTML = highScores[i].name;
+        pTagNames.innerHTML = highScores[i].name || "no username";
         pTagNames.id = "name" + i;
         highScoresNames.appendChild(pTagNames);
 
@@ -206,7 +229,24 @@ function showTableScores() {
 
         //creates p elemen for the score
         pTagScores.innerHTML = highScores[i].score + "/10";
-        pTagScores.id = "scores" + i;
+        pTagScores.id = "score" + i;
+        highScoresScores.appendChild(pTagScores);
+    }
+
+    if (highScores.length < 5) {
+        const pTagNames = document.createElement("p")
+        const pTagTime = document.createElement("p")
+        const pTagScores = document.createElement("p")
+
+        pTagNames.id = "name" + (i);
+        highScoresNames.appendChild(pTagNames);
+
+        //creates p element for the time 
+        pTagTime.id = "time" + (i);
+        highScoresTime.appendChild(pTagTime);
+
+        //creates p elemen for the score
+        pTagScores.id = "score" + (i);
         highScoresScores.appendChild(pTagScores);
     }
 }
