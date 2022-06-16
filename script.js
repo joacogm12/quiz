@@ -73,13 +73,17 @@ function start() {
 
 
 /***************************************************************** */
-//esta funcion usa los objetos para imprimir las preguntas y opciones
-//tmabien cuenta cuantas preguntas llevas bien y guarda el nuemero de pregunta en la que vas 
-//para poder terminar el quiz
+
+//this function prints the questions and options using objects of the class Quiz and Ui 
 function nextQuestion(objectQuiz, objectUi) {
 
+    //length of the array of objects that contain the questions, options nad the answer
     numOfQuestion = objectQuiz.questions.length;
 
+    //este if checa que mientras no sea la ultima pregunta se obtenga el objeto que esta en la posicion actual del arreglo
+    //y extraen sus atributos de nombre y opciones para imprimirlos
+    //guarda la opcion donde se dio click para chacarla y compararla con la respuesta 
+    //y se vuelve a llamar a esta misma funcion para realizar la misma accion con la siguiente pregunta
     if (objectQuiz.questionIndex <= 9) {
         objectUi.showQuestion(objectQuiz.getQuestionIndex().text);
         objectUi.showOptions(objectQuiz.getQuestionIndex().choices, (textBtnClick) => {
@@ -87,6 +91,7 @@ function nextQuestion(objectQuiz, objectUi) {
             nextQuestion(objectQuiz, objectUi);
         });
     }
+
 
     questionNumber++;
     nQuestionEl.innerHTML = questionNumber + " of" + numOfQuestion + "questions";
